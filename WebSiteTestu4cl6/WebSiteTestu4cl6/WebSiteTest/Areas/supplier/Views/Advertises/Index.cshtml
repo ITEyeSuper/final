@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WebSiteTest.Areas.supplier.Models.Advertises>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles
+    {
+    <link href="~/assets/css/btn.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+    <style>
+        thead {
+            background-color: gainsboro;
+            color: white;
+        }
+
+        #ifont {
+            font-size: 30px;
+        }
+
+    </style>
+}
+<h1>廣告管理</h1>
+
+<p>
+    <a class="btn" asp-action="Create">Create New</a>
+</p>
+<table id="example" class="table table-striped table-hover table-bordered nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adtitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adcontent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adstart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adend)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adpicture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adviews)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adtitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adcontent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adstart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adend)
+            </td>
+            <td>
+                <partial name="_ShowPhotoPartial" model="@item">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adviews)
+            </td>
+            <td>
+                <a class="btn" asp-action="Edit" asp-route-id="@item.Adid">Edit</a> 
+                    <a class="btn" asp-action="Details" asp-route-id="@item.Adid">Details</a> 
+                    <a class="btn" asp-action="Delete" asp-route-id="@item.Adid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts
+    {
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({ scrollX: true })
+        });
+    </script>
+}

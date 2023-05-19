@@ -1,0 +1,73 @@
+﻿<div class="row mt-1">
+    <div class="col-xl-4 col-md-6 mt-30" v-for="item in ProductDTOes">
+        <div class="product-item productBorder productPadding">
+            <div class="product-image-wrapper position-relative">
+                <a class="d-block d-flex justify-content-center"
+                   href="product-details.html">
+                    <img :src="item.ProductPic" alt="product">
+                </a>
+                <div class="productButtonBox">
+                    <ul class="product-button-set d-lg-flex d-none">
+                        <li class="product-button me-2">
+                            <a href="#exampleModalToggle" data-bs-toggle="modal"
+                               role="button" class="buttonLInk">
+                                <svg width="20" height="20" viewBox="0 0 25 25" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.5 5.05615C7.05576 5.05615 4.03109 9.29041 2.95554 11.1725C2.73488 11.5587 2.62456 11.7517 2.6367 12.0398C2.64885 12.3278 2.77857 12.516 3.03799 12.8923C4.3182 14.7497 7.79389 19.0562 12.5 19.0562C17.2061 19.0562 20.6818 14.7497 21.962 12.8923C22.2214 12.516 22.3511 12.3278 22.3633 12.0398C22.3754 11.7517 22.2651 11.5587 22.0445 11.1725C20.9689 9.2904 17.9442 5.05615 12.5 5.05615Z" />
+                                    <circle cx="12.5" cy="12.0562" r="3" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="product-button me-2">
+                            <a href="cart.html" class="buttonLInk">
+                                <svg width="20" height="20" viewBox="0 0 25 25" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.95067 13.9644L11.9033 20.4956C12.1428 20.7206 12.2625 20.8331 12.4037 20.8608C12.4673 20.8733 12.5327 20.8733 12.5963 20.8608C12.7375 20.8331 12.8572 20.7206 13.0967 20.4956L20.0493 13.9644C22.0055 12.1267 22.243 9.10275 20.5978 6.98222L20.2885 6.58349C18.3203 4.04673 14.3696 4.47217 12.9867 7.3698C12.7913 7.77911 12.2087 7.77911 12.0133 7.3698C10.6304 4.47217 6.67972 4.04674 4.71154 6.5835L4.40219 6.98222C2.75695 9.10275 2.9945 12.1267 4.95067 13.9644Z" />
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="product-button">
+                            <a href="wishlist.html" class="buttonLInk">
+                                <i class="flaticon-left-and-right-arrows"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="btn-base addbtn fw-400 whiteBtn mt-2">加入購物車</button>
+                </div>
+            </div>
+            <div class="product-content text-center mt-3 pt-2">
+                <ul class="rating justify-content-center">
+                    <li><i class="flaticon-star-1"></i></li>
+                    <li><i class="flaticon-star-1"></i></li>
+                    <li><i class="flaticon-star-1"></i></li>
+                    <li><i class="flaticon-star-1"></i></li>
+                    <li><i class="flaticon-star-1"></i></li>
+                </ul>
+                <a class="d-block pt-2" href="product-details.html">
+                    <h6 class="hover-base font-16 text-capitalize fw-500">
+                        {{item.productName}}
+                    </h6>
+                </a>
+                <div class="product-price pt-2 d-flex align-items-center justify-content-center">
+                    <span class="compared-price fw-500 font-14 colorBage1">NT${{item.productUnitPrice}} </span>
+                    <span class="regular-price font-14 ms-2"> NT${{item.productUnitPrice}} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <nav class="mt-30" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">
+                        <i class="flaticon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

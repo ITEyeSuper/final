@@ -1,0 +1,12 @@
+﻿@model WebSiteTest.Areas.supplier.Models.Advertises
+
+@if (Model.Adpicture != null)
+{
+    <img src="@Url.Content($"~/images/Advertises/{Model.Adpicture}.jpg")"
+     style="width:320px;height:240"
+     title="@Html.DisplayFor(model=> model.Adpicture)"/>
+}
+else
+{
+    <img src="@Url.Content("~/images/Advertises/noimage.jpg")" style="width:320px;height:240px" />
+}

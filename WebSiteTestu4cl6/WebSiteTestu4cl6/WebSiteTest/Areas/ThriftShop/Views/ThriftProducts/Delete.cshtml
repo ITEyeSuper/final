@@ -1,0 +1,69 @@
+﻿@model WebSiteTest.Areas.ThriftShop.Models.ThriftProducts
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ThriftProducts</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductName)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductName)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductUnitPrice)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductUnitPrice)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductQty)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductQty)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductCategory)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductCategory)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductSupplierId)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductSupplierId)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductStatus)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductStatus)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductOnDate)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductOnDate)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductOffDate)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductOffDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ThriftProductId" />
+        <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('確定要刪除嗎')" /> 
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

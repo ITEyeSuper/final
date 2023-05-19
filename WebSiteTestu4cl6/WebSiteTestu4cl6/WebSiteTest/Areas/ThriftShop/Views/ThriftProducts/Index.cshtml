@@ -1,0 +1,109 @@
+﻿@model IEnumerable<WebSiteTest.Areas.ThriftShop.Models.ThriftProducts>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles
+{
+    <link href="~/assets/css/btn.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+    <style>
+        thead {
+            background-color:gainsboro;
+            color: white;
+            
+        }
+        #ifont{
+            font-size:30px;
+        }
+
+    </style>
+}
+
+<h1>二手商品</h1>
+
+<p>
+    <a asp-area="ThriftShop" asp-controller="ThriftProducts" asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table id="example" class="table table-striped table-hover table-bordered nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductUnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductSupplierId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductOnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftProductOffDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftPicture)
+            </th>
+            <th>
+                Edit
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductName)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductUnitPrice)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductQty)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductCategory)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductSupplierId)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductStatus)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductOnDate)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftProductOffDate)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.ThriftPicture)
+        </td>
+        <td>
+                    <a class="btn" asp-area="ThriftShop" asp-action="Edit" asp-route-id="@item.ThriftProductId">Edit</a>
+                    <a class="btn" asp-action="Details" asp-route-id="@item.ThriftProductId">Details</a>
+
+                    <a class="btn" asp-action="Delete" asp-route-id="@item.ThriftProductId">Delete</a>
+                    
+        </td>
+        </tr>
+        }
+        </tbody>
+</table>
+@section Scripts
+{
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/js/mydatatablejs.js"></script>
+}

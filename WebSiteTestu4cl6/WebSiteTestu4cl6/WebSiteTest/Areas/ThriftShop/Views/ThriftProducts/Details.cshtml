@@ -1,0 +1,90 @@
+﻿@model WebSiteTest.Areas.ThriftShop.Models.ThriftProducts
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section Styles
+{
+    <style>
+        dt{
+            border:solid black 2px ;
+            height: 30px;
+            padding:3px;
+        }
+        dd{
+            /*border: solid black 2px;*/
+            height: 30px;
+            padding: 3px;
+        }
+    </style>
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ThriftProducts</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductName)
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.ThriftProductName)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductUnitPrice)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductUnitPrice)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductQty)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductQty)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductCategory)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductCategory)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductSupplierId)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductSupplierId)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductStatus)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductStatus)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductOnDate)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductOnDate)
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.ThriftProductOffDate)
+        </dt>
+        <dd class = "col-10">
+            @Html.DisplayFor(model => model.ThriftProductOffDate)
+        </dd>
+    </dl>
+</div>
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ThriftProductId" class="btn btn-info">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>*@
+<div class="row">
+    <div class="col-2">
+        <a asp-action="Edit" asp-route-id="@Model?.ThriftProductId" class="btn btn-info">Edit</a>
+    </div>
+    <div class="col-10 text-right">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

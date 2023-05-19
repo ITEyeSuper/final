@@ -1,0 +1,225 @@
+﻿@model IEnumerable<WebSiteTest.Areas.ThriftShop.Models.ThriftShopOrders>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles
+    {
+        <link href="~/assets/css/btn.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+    <style>
+        thead {
+            background-color: gainsboro;
+            color: white;
+        }
+
+        .createbtn {
+            background-color: lightblue;
+            height: 40px;
+            width: 100px;
+        }
+
+        #ifont {
+            font-size: 30px;
+        }
+    </style>
+}
+
+<h1>訂單</h1>
+
+<p>
+    <a asp-area="ThriftShop" asp-controller="ThriftShopOrders" asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table id="example" class="table table-striped table-hover table-bordered nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftCustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftEmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftOrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftShipDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftOrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThriftShipAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShippingMethod)
+            </th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThriftCustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThriftEmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThriftOrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThriftShipDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThriftOrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThriftShipAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingMethod)
+            </td>
+            <td>
+                @*<a asp-action="Edit" asp-route-id="@item.ThriftOrderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ThriftOrderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ThriftOrderId">Delete</a>*@
+
+                    <a class="btn" asp-area="ThriftShop" asp-action="Edit" asp-route-id="@item.ThriftOrderId">Edit</a>
+                    <a class="btn" asp-action="Details" asp-route-id="@item.ThriftOrderId">Details</a>
+                    <a class="btn" asp-action="Delete" asp-route-id="@item.ThriftOrderId">Delete</a>
+
+                    @*<form asp-action="Delete" id="deleteForm">
+                        <input type="hidden" name="ThriftOrderId" id="ThriftOrderId" />
+                        <button type="button" class="btn btn-danger" id="deleteButton">Delete</button>
+                    </form>*@
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts
+    {
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/js/mydatatablejs.js"></script>
+    
+}
+@*@section Scripts
+    {
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#deleteButton').click(function () {
+                console.log('ThriftOrderId:', thriftOrderId);
+                var thriftOrderId = $('input[name="ThriftOrderId"]').val();
+                if (!thriftOrderId) {
+                    swal("Oops!", "An error occurred while deleting the file.", "error");
+                    return;
+                }
+
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Areas/ThriftShop/ThriftShopOrders/Delete",
+                            data: { ThriftOrderId: thriftOrderId },
+                            success: function (data) {
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                }).then(function () {
+                                    window.location.href = "/Areas/ThriftShop/ThriftShopOrders/Index";
+                                });
+                            },
+                            error: function (xhr, status, error) {
+                                swal("Oops!", "An error occurred while deleting the file.", "error");
+                            }
+                        });
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                });
+            });
+        });
+
+    </script>
+}*@
+
+@*@section Scripts
+    {
+    <script src="~/lib/datatables/datatables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    </script>*@
+    
+    @*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.delete-link').click(function (e) {
+                e.preventDefault(); // 防止默認的跳轉行為
+
+                var thriftOrderId = $(this).data('thrift-order-id');
+
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        // 使用 jQuery 傳送 AJAX 請求
+                        $.ajax({
+                            type: "POST",
+                            url: "/Areas/ThriftShop/ThriftShopOrders/Delete",
+                            data: { id: thriftOrderId },
+                            success: function (data) {
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                }).then(function () {
+                                    // 重新導向至清單頁面
+                                    window.location.href = "/Areas/ThriftShop/ThriftShopOrders/Index";
+                                });
+                            },
+                            error: function (xhr, status, error) {
+                                swal("Oops!", "An error occurred while deleting the file.", "error");
+                            }
+                        });
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                });
+            });
+        });
+    </script>*@
+@*}*@

@@ -1,0 +1,161 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-WebSiteTest-71c1211a-80f7-466b-8346-7512d8cb1808</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\BTN.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\AspnetUser\Data\" />
+    <Folder Include="Areas\AspnetUser\Models\" />
+    <Folder Include="Areas\FrontThrift\Data\" />
+    <Folder Include="Areas\FrontThrift\Models\" />
+    <Folder Include="Areas\ProductsFront\Data\" />
+    <Folder Include="Areas\ProductsFront\js\" />
+    <Folder Include="Areas\ProductsManager\Data\" />
+    <Folder Include="Areas\supplier\Data\" />
+    <Folder Include="Areas\ThriftShop\Data\" />
+    <Folder Include="Areas\ThriftShop\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\ProductsManager\Views\Products\Create.cshtml" />
+    <None Include="Areas\ProductsManager\Views\Products\Delete.cshtml" />
+    <None Include="Areas\ProductsManager\Views\Products\Details.cshtml" />
+    <None Include="Areas\ProductsManager\Views\Products\Edit.cshtml" />
+    <None Include="Areas\ProductsManager\Views\Products\Index.cshtml" />
+    <None Include="Areas\ProductsManager\Views\_ViewImports.cshtml" />
+    <None Include="Areas\ProductsManager\Views\_ViewStart.cshtml" />
+    <None Include="Areas\supplier\Views\Advertises\Create.cshtml" />
+    <None Include="Areas\supplier\Views\Advertises\Delete.cshtml" />
+    <None Include="Areas\supplier\Views\Advertises\Details.cshtml" />
+    <None Include="Areas\supplier\Views\Advertises\Edit.cshtml" />
+    <None Include="Areas\supplier\Views\Advertises\Index.cshtml" />
+    <None Include="Areas\supplier\Views\Advertises\_ShowPhotoPartial.cshtml" />
+    <None Include="Areas\supplier\Views\Suppliers\Create.cshtml" />
+    <None Include="Areas\supplier\Views\Suppliers\Delete.cshtml" />
+    <None Include="Areas\supplier\Views\Suppliers\Details.cshtml" />
+    <None Include="Areas\supplier\Views\Suppliers\Edit.cshtml" />
+    <None Include="Areas\supplier\Views\Suppliers\Index.cshtml" />
+    <None Include="Areas\supplier\_ViewImports.cshtml" />
+    <None Include="Areas\supplier\_ViewStart.cshtml" />
+    <None Include="bundleconfig.json" />
+    <None Include="wwwroot\front\fonts\flaticon.svg" />
+    <None Include="wwwroot\front\images\innerpage\static-icons-1.webp" />
+    <None Include="wwwroot\front\images\innerpage\static-icons-2.webp" />
+    <None Include="wwwroot\front\images\innerpage\static-icons-3.webp" />
+    <None Include="wwwroot\front\images\innerpage\static-icons-4.webp" />
+    <None Include="wwwroot\front\js\bootstrap.v5.1.1.min.js" />
+    <None Include="wwwroot\front\js\jqurey.v3.6.0.min.js" />
+    <None Include="wwwroot\front\js\main.js" />
+    <None Include="wwwroot\front\js\plugin\jquery-ui.min.js" />
+    <None Include="wwwroot\front\js\plugin\jquery.countdown.min.js" />
+    <None Include="wwwroot\front\js\plugin\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\front\js\plugin\slick.min.js" />
+    <None Include="wwwroot\front\js\popper.v2.9.3.min.js" />
+    <None Include="wwwroot\front\js\signin.js" />
+    <None Include="wwwroot\images\products\AMD_ryzen_7800x3d.jpg" />
+    <None Include="wwwroot\images\products\coolpc-13th-gen-nonk-b760-lt.jpg" />
+    <None Include="wwwroot\images\products\coolpc-core-i9-13900ks-lt.jpg" />
+    <None Include="wwwroot\images\products\coolpc-ryzen-7000-lt.jpg" />
+    <None Include="wwwroot\images\products\coolpc-ryzen-7000x3d-6.jpg" />
+    <None Include="wwwroot\images\products\coolpc-ryzen-7000x3d-lt.jpg" />
+    <None Include="wwwroot\images\products\coolpc-ryzen-7800x3d-11-90x90.jpg" />
+    <None Include="wwwroot\images\products\coolpc-ryzen-7800x3d-3-90x90.jpg" />
+    <None Include="wwwroot\images\products\RTX3050_solo.jpg" />
+    <None Include="wwwroot\images\products\RTX4070.jpg" />
+    <None Include="wwwroot\images\products\RTX4070Ti.jpg" />
+    <None Include="wwwroot\js\showproducts.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bootstrap.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bootstrap4.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bootstrap5.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bootstrap5.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bulma.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.bulma.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.dataTables.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.dataTables.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.foundation.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.foundation.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.jqueryui.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.jqueryui.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.semanticui.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\dataTables.semanticui.min.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\jquery.dataTables.js" />
+    <None Include="wwwroot\lib\DataTables\DataTables-1.13.4\js\jquery.dataTables.min.js" />
+    <None Include="wwwroot\lib\DataTables\datatables.js" />
+    <None Include="wwwroot\lib\DataTables\datatables.min.js" />
+    <None Include="wwwroot\thriftfiles\css\fonts\slick.svg" />
+    <None Include="wwwroot\thriftfiles\fonts\bootstrap-icons.woff2" />
+    <None Include="wwwroot\thriftfiles\fonts\boxicons.svg" />
+    <None Include="wwwroot\thriftfiles\fonts\boxicons.woff2" />
+    <None Include="wwwroot\thriftfiles\images\icons\aiction-icon.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\car-icon.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\cat-icon1.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\cat-icon2 %281%29.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\cat-icon2.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\cat-icon3.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\cat-icon4.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\cat-icon5.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\comment-icon.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\comment.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\dot-circle.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\employee.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\header-phone.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\moto-bike.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\quote-green %281%29.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\quote-green.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\quote-green2 %281%29.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\quote-green2.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\quote-red %281%29.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\quote-red.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\review.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\sec-arro1.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\sec-arro2.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\send-icon.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\smile-emo %281%29.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\smile-emo.svg" />
+    <None Include="wwwroot\thriftfiles\images\icons\smily.svg" />
+    <None Include="wwwroot\thriftfiles\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\thriftfiles\js\jquery-3.6.0.min.js" />
+    <None Include="wwwroot\thriftfiles\js\jquery-ui.js" />
+    <None Include="wwwroot\thriftfiles\js\jquery.magnific-popup.min.js" />
+    <None Include="wwwroot\thriftfiles\js\jquery.nice-select.js" />
+    <None Include="wwwroot\thriftfiles\js\main.js" />
+    <None Include="wwwroot\thriftfiles\js\odometer.min.js" />
+    <None Include="wwwroot\thriftfiles\js\slick.js" />
+    <None Include="wwwroot\thriftfiles\js\swiper-bundle.min.js" />
+    <None Include="wwwroot\thriftfiles\js\viewport.jquery.js" />
+    <None Include="wwwroot\thriftfiles\js\wow.min.js" />
+    <None Include="wwwroot\thriftfiles\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\thriftfiles\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\thriftfiles\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\thriftfiles\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\thriftfiles\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\thriftfiles\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+</Project>

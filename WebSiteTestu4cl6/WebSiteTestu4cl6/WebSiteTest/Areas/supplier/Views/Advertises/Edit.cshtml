@@ -1,0 +1,64 @@
+﻿@model WebSiteTest.Areas.supplier.Models.Advertises
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Advertises</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Adid" />
+            <div class="form-group">
+                <label asp-for="Adtitle" class="control-label"></label>
+                <input asp-for="Adtitle" class="form-control" />
+                <span asp-validation-for="Adtitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adcontent" class="control-label"></label>
+                <input asp-for="Adcontent" class="form-control" />
+                <span asp-validation-for="Adcontent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adstart" class="control-label"></label>
+                <input asp-for="Adstart" class="form-control" />
+                <span asp-validation-for="Adstart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adend" class="control-label"></label>
+                <input asp-for="Adend" class="form-control" />
+                <span asp-validation-for="Adend" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adpicture" class="control-label"></label>
+                <input asp-for="Adpicture" class="form-control" />
+                <span asp-validation-for="Adpicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee" class="control-label"></label>
+                <input asp-for="Employee" class="form-control" />
+                <span asp-validation-for="Employee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adviews" class="control-label"></label>
+                <input asp-for="Adviews" class="form-control" />
+                <span asp-validation-for="Adviews" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

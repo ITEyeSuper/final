@@ -1,0 +1,378 @@
+﻿@page
+@model LoginModel
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .checkbox-circle2 input[type="checkbox"] {
+        display: none;
+    }
+
+        .checkbox-circle2 input[type="checkbox"] + label {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            font: 14px/20px "Open Sans", Arial, sans-serif;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .checkbox-circle2 input[type="checkbox"]:hover + label:hover {
+            color: rgb(23, 86, 228);
+        }
+
+        .checkbox-circle2 input[type="checkbox"]:hover + label:before {
+            border: 1px solid #343a3f;
+            box-shadow: 2px 1px 0 #343a3f;
+        }
+
+        .checkbox-circle2 input[type="checkbox"] + label:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox-circle2 input[type="checkbox"] + label:before {
+            content: "";
+            display: block;
+            width: 1.4em;
+            height: 1.4em;
+            border: 1px solid #343a3f;
+            border-radius: 1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+            transition: all 0.2s, background 0.2s ease-in-out;
+            background: #f3f3f3;
+            box-shadow: -2px -1px 0 #343a3f;
+        }
+
+        .checkbox-circle2 input[type="checkbox"]:checked + label:before {
+            border-radius: 1em;
+            border: 2px solid #fff;
+            width: 1.15em;
+            height: 1.15em;
+            background: #50565a;
+            box-shadow: 2px 1px 0 #50565a;
+        }
+
+    body {
+        overflow: hidden;
+        background: linear-gradient(to bottom, azure, #97CBFF);
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /*background: linear-gradient(to bottom, azure, #000);*/
+    }
+
+        section .color {
+            position: absolute;
+            filter: blur(150px);
+        }
+
+            section .color:nth-child(1) {
+                top: -350px;
+                width: 600px;
+                height: 600px;
+                /*background: #51f789;*/
+            }
+
+            section .color:nth-child(2) {
+                bottom: -150px;
+                left: 100px;
+                width: 500px;
+                height: 500px;
+                /*background: #fffd87;*/
+            }
+
+            section .color:nth-child(3) {
+                bottom: 50px;
+                right: 100px;
+                width: 500px;
+                height: 500px;
+                /*background: #00d2ff;*/
+            }
+
+    .box {
+        position: relative;
+    }
+
+        .box .square {
+            position: absolute;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
+            border: 1px solid rgb(255, 255, 255, 0.5);
+            border-right: 1px solid rgb(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+            background: rgb(255, 255, 255, 0.1);
+            border-radius: 10px;
+            animation: animate 10s linear infinite;
+            animation-delay: calc(-1s * var(--i));
+        }
+
+    /* 动画 */
+
+    @@keyframes animate {
+        0%,
+        100% {
+            transform: translateY(-40px);
+        }
+
+        50% {
+            transform: translate(40px);
+        }
+    }
+
+    .box .square:nth-child(1) {
+        top: -50px;
+        right: -60px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .box .square:nth-child(2) {
+        top: 150px;
+        left: -100px;
+        width: 70px;
+        height: 80px;
+        z-index: 2;
+    }
+
+    .box .square:nth-child(3) {
+        bottom: 50px;
+        right: -60px;
+        width: 80px;
+        height: 80px;
+        z-index: 2;
+    }
+
+    .box .square:nth-child(4) {
+        bottom: -80px;
+        left: 100px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .box .square:nth-child(5) {
+        top: -90px;
+        left: 140px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .container {
+        position: relative;
+        width: 400px;
+        min-height: 400px;
+        background: rgb(255, 255, 255, 0.1);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
+        border: 1px solid rgb(255, 255, 255, 0.5);
+        border-right: 1px solid rgb(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+    }
+
+    .form {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 50px;
+    }
+
+        .form h2 {
+            position: relative;
+            color: #666;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+            .form h2::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                width: 80px;
+                height: 4px;
+                background: #fff;
+            }
+
+        .form .inputBox {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+            .form .inputBox input {
+                width: 100%;
+                background: rgb(255, 255, 255, 0.2);
+                border: none;
+                outline: none;
+                padding: 10px 20px;
+                border-radius: 35px;
+                border: 1px solid rgb(255, 255, 255, 0.5);
+                border-right: 1px solid rgb(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+                font-size: 16px;
+                letter-spacing: 1px;
+                color: #666;
+                box-shadow: 0 5px 15px rgb(0, 0, 0, 0.05);
+            }
+
+                .form .inputBox input::placeholder {
+                    color: #666;
+                }
+
+    button {
+        margin-top: 20px;
+        background: rgb(0, 0, 0, 0.05);
+        padding: 10px 20px;
+        border-radius: 35px;
+        border: none;
+        border: 1px solid rgb(255, 255, 255, 0.5);
+        border-right: 1px solid rgb(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+        box-shadow: 0 5px 15px rgb(0, 0, 0, 0.05);
+        color: rgb(0, 0, 0);
+    }
+
+        button:hover {
+            color: #30D5C8;
+            width:;
+            box-shadow: 0 0 20px rgb(0, 0, 0, 0.05);
+            background-color: rgb(0, 0, 0, 0.05);
+        }
+
+
+    .forget {
+        margin-top: 5px;
+        color: #fff;
+    }
+
+        .forget a {
+            color: #fff;
+            font-weight: 600;
+        }
+
+</style>
+@section Styles
+    {
+
+}
+
+@{
+    ViewData["Title"] = "Log in";
+    Layout = null;
+}
+
+@*<h1>@ViewData["Title"]</h1>*@
+
+<section>
+    <div class="color"></div>
+
+    <div class="color"></div>
+
+    <div class="color"></div>
+
+    <div class="box">
+        <div class="square" style="--i: 0"></div>
+
+        <div class="square" style="--i: 1"></div>
+
+        <div class="square" style="--i: 2"></div>
+
+        <div class="square" style="--i: 3"></div>
+
+        <div class="square" style="--i: 4"></div>
+
+        <div class="container">
+            <div class="form">
+                <form id="account" method="post">
+                    @*                <h2>Use a local account to log in.</h2>*@
+                    <h2>@ViewData["Title"]</h2>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="inputBox">
+                        <input placeholder="UserName" asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" />
+                        <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                    </div>
+                    <div class="inputBox">
+                        <input placeholder="Password" asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div>
+                       @* <div class="item">
+                            <div class="checkbox-circle2">
+                                <input asp-for="Input.RememberMe" type="checkbox" id="checkbox-circle2" name="check" class="form-label">
+                                <label class="form-check-input" for="checkbox-circle2" asp-for="Input.RememberMe">@Html.DisplayNameFor(m => m.Input.RememberMe)</label>
+                            </div>
+                        </div>*@
+                        @* <div class="checkbox-rect checkbox">
+                        <label for="checkbox-rect1" asp-for="Input.RememberMe" class="form-label ">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        </label>
+                        </div>*@
+                    </div>
+                    <div>
+                        <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                    </div>
+                    <div>
+                        <p>
+                            <a id="forgot-password" asp-page="./ForgotPassword">忘記密碼</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+<div class="col-md-6 col-md-offset-2">
+    <section>
+        <h3>Use another service to log in.</h3>
+        <hr />
+        @{
+            if ((Model.ExternalLogins?.Count ?? 0) == 0)
+            {
+                <div>
+                    <p>
+                        There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                            article
+                            about setting up this ASP.NET application to support logging in via external services
+                        </a>.
+                    </p>
+                </div>
+            }
+            else
+            {
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                    <div>
+                        <p>
+                            @foreach (var provider in Model.ExternalLogins!)
+                            {
+                                <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                            }
+                        </p>
+                    </div>
+                </form>
+            }
+        }
+    </section>
+</div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

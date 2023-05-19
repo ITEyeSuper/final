@@ -1,0 +1,102 @@
+﻿@model IEnumerable<WebSiteTest.Areas.ProductsManager.Models.ViewModel.OrderViewModel>
+@{
+    ViewData["Title"] = "Orders";
+}
+@section Styles
+    {
+    <link href="~/assets/css/btn.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+    <style>
+        thead {
+            background-color: gainsboro;
+            color: white;
+        }
+
+        .createbtn {
+            background-color: lightblue;
+            height: 40px;
+            width: 100px;
+        }
+
+        .acreate {
+            color: black;
+        }
+    </style>
+}
+<h1>訂單管理</h1>
+<p>
+    <a class="btn" asp-action="OrdersCreate">Create New</a>
+</p>
+<table id="example" class="table table-striped table-hover table-bordered nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderOnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShipAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShippingMethod)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.OrderOnDate)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.ShipDate)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.ShipAddress)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.ShippingMethod)
+            </td>
+            <td>
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> 
+                    <a class="btn btn-success" asp-action="Details" asp-route-orderid="@item.OrderId">Details</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+@section Scripts
+    {
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/js/mydatatablejs.js"></script>
+
+}

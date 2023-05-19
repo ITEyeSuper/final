@@ -1,0 +1,103 @@
+﻿@model IEnumerable<WebSiteTest.Areas.ProductsManager.Models.Products>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles
+    {
+    <link href="~/assets/css/btn.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+    <style>
+        thead {
+            background-color:gainsboro;
+            color: white;
+        }
+
+        .createbtn{
+            background-color:lightblue;
+            height:40px;
+            width:100px;
+        }
+
+        .acreate{
+            color:black;
+        }
+    </style>
+}
+<h1>商品管理</h1>
+
+<p>
+    <a class="btn" asp-action="Create">Create New</a>
+</p>
+<table id="example" class="table table-striped table-hover table-bordered nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductUnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductSupplierId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductOffDate)
+            </th>
+            <th>編輯</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductUnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductSupplierId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductOnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductOffDate)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> 
+                <a class="btn btn-success" asp-action="Details" asp-route-id="@item.ProductId">Details</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts
+{
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/js/mydatatablejs.js"></script>
+
+}

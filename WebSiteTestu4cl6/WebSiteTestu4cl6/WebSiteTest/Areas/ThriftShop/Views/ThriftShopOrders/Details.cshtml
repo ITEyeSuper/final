@@ -1,0 +1,89 @@
+﻿@model WebSiteTest.Areas.ThriftShop.Models.ThriftShopOrders
+
+@{
+    ViewData["Title"] = "Details";
+}
+@section Styles
+    {
+    <style>
+        dt {
+            border: solid black 2px;
+            height: 30px;
+            padding: 3px;
+        }
+
+        dd {
+            /*border: solid black 2px;*/
+            height: 30px;
+            padding: 3px;
+        }
+    </style>
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ThriftShopOrders</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThriftCustomerId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThriftCustomerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThriftEmployeeId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThriftEmployeeId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThriftOrderDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThriftOrderDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThriftShipDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThriftShipDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThriftOrderStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThriftOrderStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThriftShipAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThriftShipAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShippingMethod)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShippingMethod)
+        </dd>
+    </dl>
+</div>
+@*<div>
+    <div class="col-3 float-left" style="display: inline-block;">
+        <a asp-action="Edit" asp-route-id="@Model?.ThriftOrderId" class="btn btn-info">Edit</a>
+    </div>
+    <div class="col-9 float-right" style="display: inline-block;">
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>*@
+<div class="row">
+    <div class="col-2">
+        <a asp-action="Edit" asp-route-id="@Model?.ThriftOrderId" class="btn btn-info">Edit</a>
+    </div>
+    <div class="col-10 text-right">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+

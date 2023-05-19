@@ -1,0 +1,97 @@
+﻿@model IEnumerable<WebSiteTest.Areas.supplier.Models.Suppliers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styles
+    {
+    <link href="~/assets/css/btn.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+    <style>
+        thead {
+            background-color: gainsboro;
+            color: white;
+        }
+
+        #ifont {
+            font-size: 30px;
+        }
+
+    </style>
+}
+<h1>廠商管理</h1>
+
+<p>
+    <a class="btn" asp-action="Create">Create New</a>
+</p>
+<table id="example" class="table table-striped table-hover table-bordered nowrap">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactPerson)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UniformNumbers)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactPerson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniformNumbers)
+            </td>
+            <td>
+                <a class="btn" asp-action="Edit" asp-route-id="@item.SupplierId">Edit</a> 
+                <a class="btn" asp-action="Details" asp-route-id="@item.SupplierId">Details</a> 
+                <a class="btn" asp-action="Delete" asp-route-id="@item.SupplierId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts
+    {
+    <script src="~/lib/datatables/datatables.min.js"></script>
+    <script src="~/js/mydatatablejs.js"></script>
+}

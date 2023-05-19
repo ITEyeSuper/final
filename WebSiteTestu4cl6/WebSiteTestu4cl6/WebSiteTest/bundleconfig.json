@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "wwwroot/lib/datatable/datatables.min.css",
+    "inputFiles": [
+      "wwwroot/lib/datatable/datatables.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/datatable/datatables.min.js",
+    "inputFiles": [
+      "wwwroot/lib/datatable/datatables.js"
+    ]
+  }
+]

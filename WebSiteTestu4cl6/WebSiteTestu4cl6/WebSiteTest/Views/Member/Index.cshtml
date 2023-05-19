@@ -1,0 +1,79 @@
+﻿@section Styles{
+    <style>
+        div {
+        }
+
+        .view {
+            width: 700px;
+            height: 700px;
+            display: flex;
+        }
+
+        #view {
+        }
+    </style>
+
+}
+<div class="view">
+    <canvas id="CustomersChart" width="300" height="200"></canvas>
+    <canvas id="CustomersChart1" width="300" height="300"></canvas>
+</div>
+
+@section scripts {
+    <script src="~/lib/chart.js/chart.min.js"></script>
+    <script>
+        var ctxline = document.getElementById("CustomersChart").getContext('2d');
+        $.ajax({
+            url: "@Url.Action("GetCustomersCount", "Member")",
+            type: "get",
+        }).done(function (data) {
+            var labels = []; var dataresults = [];
+            $.each(data, function (index, item) {
+                labels.push(item.ThriftProductCategory); dataresults.push(item.count);
+            });
+            var myLineChart = new Chart(ctxline, {
+                type: 'pie',
+                data: {
+                    labels: [
+                        '主機',
+                        '顯示卡',
+                        'CPU',
+                    ],
+                    datasets: [{ label: '客戶人數', data: dataresults, backgroundColor: ['red', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', "yellow", "brown", "grey", "purple"], borderWidth: 1 }]
+
+                },
+                //options: {
+                //    scales: { yAxes: [{ ticks: { beginAtZero: true  } }] }
+                //}
+            });
+        }).fail(function (err) { alert(err.statusText); });
+
+        var ctxline1 = document.getElementById("CustomersChart1").getContext('2d');
+        $.ajax({
+            url: "@Url.Action("GetCustomersCount", "Member")",
+            type: "get",
+        }).done(function (data) {
+            var labels = []; var dataresults = [];
+            $.each(data, function (index, item) {
+                labels.push(item.ThriftProductCategory); dataresults.push(item.count);
+            });
+            var myLineChart = new Chart(ctxline1, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        '主機',
+                        '顯示卡',
+                        'CPU',
+                    ],
+                    datasets: [{ label: '狀態', data: dataresults, backgroundColor: ['rgba(203, 182, 70, 0.2)', 'rgba(75, 192, 192, 0.2)'], borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)'], borderWidth: 1 }]
+
+                },
+                options: {
+                    scales: { yAxes: [{ ticks: { beginAtZero: true } }] }
+                }
+            });
+        }).fail(function (err) { alert(err.statusText); });
+    </script>
+}
+
+

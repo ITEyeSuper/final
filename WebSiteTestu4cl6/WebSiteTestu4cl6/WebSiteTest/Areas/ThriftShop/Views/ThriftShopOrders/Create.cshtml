@@ -1,0 +1,72 @@
+﻿@model WebSiteTest.Areas.ThriftShop.Models.ThriftShopOrders
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ThriftShopOrders</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ThriftOrderId" class="control-label"></label>
+                <input asp-for="ThriftOrderId" class="form-control" />
+                <span asp-validation-for="ThriftOrderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThriftCustomerId" class="control-label"></label>
+                <input asp-for="ThriftCustomerId" class="form-control" />
+                <span asp-validation-for="ThriftCustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThriftEmployeeId" class="control-label"></label>
+                <input asp-for="ThriftEmployeeId" class="form-control" />
+                <span asp-validation-for="ThriftEmployeeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThriftOrderDate" class="control-label"></label>
+                <input asp-for="ThriftOrderDate" class="form-control" />
+                <span asp-validation-for="ThriftOrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThriftShipDate" class="control-label"></label>
+                <input asp-for="ThriftShipDate" class="form-control" />
+                <span asp-validation-for="ThriftShipDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThriftOrderStatus" class="control-label"></label>
+                <input asp-for="ThriftOrderStatus" class="form-control" />
+                <span asp-validation-for="ThriftOrderStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThriftShipAddress" class="control-label"></label>
+                <input asp-for="ThriftShipAddress" class="form-control" />
+                <span asp-validation-for="ThriftShipAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShippingMethod" class="control-label"></label>
+                <input asp-for="ShippingMethod" class="form-control" />
+                <span asp-validation-for="ShippingMethod" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-3 form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <div class="col-9">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

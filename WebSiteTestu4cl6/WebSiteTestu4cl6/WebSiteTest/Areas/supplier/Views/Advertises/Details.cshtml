@@ -1,0 +1,60 @@
+﻿@model WebSiteTest.Areas.supplier.Models.Advertises
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Advertises</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adtitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adtitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adcontent)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adcontent)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adstart)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adstart)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adend)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adend)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adpicture)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adpicture)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Employee)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Employee)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Adviews)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Adviews)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Adid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
