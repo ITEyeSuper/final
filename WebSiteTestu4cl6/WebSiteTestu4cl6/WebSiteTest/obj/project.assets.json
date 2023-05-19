@@ -10465,11 +10465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\上課\\雜七雜八\\期末專題\\0519電腦客製化\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\WebSiteTest.csproj",
+      "projectUniqueName": "C:\\Users\\iSpan\\Desktop\\final\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\WebSiteTest.csproj",
       "projectName": "WebSiteTest",
-      "projectPath": "C:\\Users\\iSpan\\Desktop\\上課\\雜七雜八\\期末專題\\0519電腦客製化\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\WebSiteTest.csproj",
+      "projectPath": "C:\\Users\\iSpan\\Desktop\\final\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\WebSiteTest.csproj",
       "packagesPath": "C:\\Users\\iSpan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iSpan\\Desktop\\上課\\雜七雜八\\期末專題\\0519電腦客製化\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\obj\\",
+      "outputPath": "C:\\Users\\iSpan\\Desktop\\final\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

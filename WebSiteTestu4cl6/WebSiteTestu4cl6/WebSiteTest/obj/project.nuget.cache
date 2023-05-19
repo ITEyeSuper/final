@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lDLZEowd9HHuse4pB4/y/v+Qc/RjApO0V34HsWK2MQQ2sqpYotzkOMH8ekOXQnOzBOuQZlYVasUuioeVArWfDg==",
+  "dgSpecHash": "RspWAHUtbOBa4dCn71INnbZB/FhGJi6D3Fxi+yWokPnfBygeKEOta/5hPFQwvM05MJBL7LYB7VpyXXV2Zj0hbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\iSpan\\Desktop\\上課\\雜七雜八\\期末專題\\0519電腦客製化\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\WebSiteTest.csproj",
+  "projectFilePath": "C:\\Users\\iSpan\\Desktop\\final\\WebSiteTestu4cl6\\WebSiteTestu4cl6\\WebSiteTest\\WebSiteTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iSpan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\iSpan\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
